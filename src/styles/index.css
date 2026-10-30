@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  background: #090b0f;
+  font-family: Inter, "SF Pro Display", "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #090b0f;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: #090b0f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* 视频不可用时的静态兜底：低对比渐变与细线，不依赖外部图片。 */
+.hero-fallback {
+  background:
+    linear-gradient(112deg, rgba(59, 75, 100, 0.18), transparent 42%),
+    radial-gradient(circle at 78% 18%, rgba(91, 105, 138, 0.16), transparent 28%),
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    #090b0f;
+  background-size: auto, auto, 88px 88px, 88px 88px, auto;
+}
+
+.contact-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+@media (max-width: 640px) {
+  .hero-fallback {
+    background-size: auto, auto, 56px 56px, 56px 56px, auto;
+  }
+}
