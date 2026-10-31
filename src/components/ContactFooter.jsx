@@ -19,7 +19,7 @@ export function ContactFooter() {
           </h2>
           <a
             className="mt-10 inline-flex border-b border-white/45 pb-2 text-base text-white transition-colors hover:border-white hover:text-white lg:mt-14 lg:text-xl"
-            href="#contact-email"
+            href={contact.emailHref}
             id="contact-email"
           >
             {contact.email}
@@ -28,9 +28,15 @@ export function ContactFooter() {
 
         <div className="relative flex flex-col gap-6 border-t border-white/10 pt-5 md:flex-row md:items-end md:justify-between">
           <p className="max-w-sm text-xs leading-5 text-white/40">
-            [待我替换] 在这里补充一句合作方式、可联系时间或版权说明。
+            欢迎通过邮件或电话联系我，交流 AI 产品与智能体应用相关机会。
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-3">
+            <a
+              className="text-xs text-white/55 transition-colors hover:text-white"
+              href={contact.phoneHref}
+            >
+              电话 {contact.phone}
+            </a>
             {contact.socialLinks.map((link) => (
               <a
                 className="text-xs text-white/55 transition-colors hover:text-white"
