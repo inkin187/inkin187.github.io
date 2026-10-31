@@ -4,7 +4,7 @@ import { siteContent } from '../data/siteContent';
 export function Hero() {
   const videoRef = useRef(null);
   const [useFallback, setUseFallback] = useState(false);
-  const { hero } = siteContent;
+  const { hero, contact } = siteContent;
 
   // 某些浏览器会阻止自动播放；此时直接切换到静态渐变兜底背景。
   useEffect(() => {
@@ -26,11 +26,11 @@ export function Hero() {
   }, [hero.videoUrl]);
 
   return (
-    <section className="relative flex min-h-screen items-end overflow-hidden px-5 pb-12 pt-32 lg:px-8 lg:pb-16" id="home">
+    <section className="relative min-h-screen overflow-hidden px-5 pt-24 lg:px-8 lg:pt-28" id="home">
       {!useFallback && hero.videoUrl && (
         <video
           autoPlay
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.55] grayscale brightness-[0.6]"
           loop
           muted
           onError={() => setUseFallback(true)}
@@ -41,27 +41,36 @@ export function Hero() {
         </video>
       )}
 
-      <div className="hero-fallback absolute inset-0" aria-hidden="true" />
-      <div className="absolute inset-0 bg-[#080a0e]/65" aria-hidden="true" />
+      {useFallback && <div className="hero-fallback absolute inset-0" aria-hidden="true" />}
+      <div className="absolute inset-0 bg-[#070707]/40" aria-hidden="true" />
 
-      <div className="relative mx-auto flex w-full max-w-[1700px] flex-col justify-between gap-20">
-        <div className="max-w-6xl">
-          <p className="mb-7 text-[10px] font-medium tracking-[0.19em] text-white/55 lg:text-xs">
+      <div className="relative mx-auto flex min-h-[calc(100vh-6rem)] w-full max-w-[1700px] flex-col justify-between pb-12 lg:min-h-[calc(100vh-5rem)] lg:pb-16">
+        <div>
+          <div className="flex items-center justify-between border-b border-white/10 pb-3 text-[10px] tracking-[0.14em] text-white/45">
+            <span>PORTFOLIO</span>
+            <span>[2026]</span>
+          </div>
+          <p className="mt-4 text-[10px] font-medium tracking-[0.19em] text-[#ff574f] lg:text-xs">
             {hero.eyebrow}
           </p>
-          <h1 className="max-w-5xl text-5xl font-medium leading-[1.03] tracking-[-0.055em] text-white sm:text-7xl lg:text-[clamp(5rem,8.8vw,10rem)]">
+          <h1 className="mt-1 w-max max-w-none origin-left scale-x-[0.88] whitespace-nowrap text-[15vw] font-black leading-[0.78] tracking-[-0.09em] text-[#ff3028] lg:text-[clamp(9rem,14.35vw,15.25rem)]">
             {hero.title}
           </h1>
         </div>
 
-        <div className="flex flex-col justify-between gap-8 border-t border-white/15 pt-5 md:flex-row md:items-end">
-          <p className="max-w-md text-sm leading-7 text-white/60 lg:text-base">{hero.description}</p>
+        <div className="flex flex-wrap items-center gap-3 border-t border-white/15 pt-5">
           <a
-            className="group inline-flex w-fit items-center gap-3 text-sm text-white/75 transition-colors hover:text-white"
-            href="#projects"
+            className="group inline-flex items-center gap-3 bg-[#f5f0e8] px-4 py-3 text-xs font-medium text-black transition-colors hover:bg-[#ff3028]"
+            href="#intro"
           >
-            浏览精选项目
+            开始查看
             <span className="transition-transform duration-300 group-hover:translate-x-1">↘</span>
+          </a>
+          <a
+            className="border border-white/15 px-4 py-3 text-xs text-white/70 transition-colors hover:border-white/40 hover:text-white"
+            href={contact.emailHref}
+          >
+            {contact.email}
           </a>
         </div>
       </div>

@@ -3,18 +3,25 @@
 export const siteContent = {
   navigation: [
     { label: '首页', href: '#home' },
+    { label: '个人简介', href: '#intro' },
     { label: '精选项目', href: '#projects' },
     { label: '个人经历', href: '#experience' },
     { label: '能力优势', href: '#strengths' },
-    { label: '联系我', href: '#contact' },
   ],
   hero: {
-    eyebrow: '[待我替换] AI PRODUCT ENGINEER / AI AGENT ENGINEER',
-    title: '[待我替换] 一句清晰、克制的个人身份 Slogan',
-    description:
-      '[待我替换] 用 1–2 句话说明你的方向、关注的问题与工作方式。',
-    // 【待我替换】替换为可公开访问的 MP4 视频地址；保留空或加载失败时会自动显示静态背景。
-    videoUrl: 'https://example.com/replace-me-hero-video.mp4',
+    eyebrow: 'AI PRODUCT MANAGER',
+    title: 'SHAO SHUAIBO',
+    // 首页本地背景视频；视频加载失败或自动播放受限时会自动显示静态背景。
+    videoUrl: '/videos/hero-background.mp4',
+  },
+  introduction: {
+    eyebrow: 'AI DESIGNER',
+    title: 'DESIGNING',
+    accentTitle: 'AI EXPERIENCES.',
+    statement: '【待填写】在这里补充一段简洁的个人介绍，说明你的专业方向、思考方式与希望解决的问题。',
+    portraitUrl: '/images/shao-shuaibo-id.png',
+    name: '邵帅博',
+    role: 'AI DESIGNER',
   },
   projects: [
     {
@@ -56,21 +63,21 @@ export const siteContent = {
     },
   ],
   experience: {
-    // 【待我替换】替换为头像或人像图链接。
+    // 【待填写】替换为头像或人像图链接。
     portraitUrl:
-      'https://placehold.co/960x1200/141920/7d8798?text=%5B%E5%BE%85%E6%88%91%E6%9B%BF%E6%8D%A2%5D+PORTRAIT',
-    introTitle: '[待我替换] 个人简介标题',
+      'https://placehold.co/960x1200/141920/7d8798?text=%E3%80%90%E5%BE%85%E5%A1%AB%E5%86%99%E3%80%91%E4%B8%AA%E4%BA%BA%E5%A4%B4%E5%83%8F',
+    introTitle: '【待填写】个人简介标题',
     intro:
-      '[待我替换] 在这里填写个人经历、专业方向与工作偏好。建议控制在 3–5 行，让读者快速建立对你的认识。',
+      '【待填写】在这里填写个人经历、专业方向与工作偏好。建议控制在 3–5 行，让读者快速建立对你的认识。',
     metrics: [
-      { value: '[待我替换]', label: '项目成果数据 01' },
-      { value: '[待我替换]', label: '项目成果数据 02' },
-      { value: '[待我替换]', label: '项目成果数据 03' },
+      { value: '【待填写】', label: '个人信息 01' },
+      { value: '【待填写】', label: '个人信息 02' },
+      { value: '【待填写】', label: '个人信息 03' },
     ],
     contact: [
-      { label: '邮箱', value: '[待我替换] your@email.com' },
-      { label: '所在地', value: '[待我替换] City, Country' },
-      { label: '状态', value: '[待我替换] Available for opportunities' },
+      { label: '【待填写】', value: '基本信息 01' },
+      { label: '【待填写】', value: '基本信息 02' },
+      { label: '【待填写】', value: '基本信息 03' },
     ],
   },
   strengths: [
@@ -96,9 +103,12 @@ export const siteContent = {
     },
   ],
   contact: {
-    preface: '[待我替换] CONTACT',
-    title: '[待我替换] 让下一次对话从这里开始。',
-    email: '[待我替换] your@email.com',
+    preface: '联系 / 邵帅博',
+    title: '期待与您交流。',
+    email: '920930452@qq.com',
+    emailHref: 'mailto:920930452@qq.com',
+    phone: '188 1316 8768',
+    phoneHref: 'tel:+8618813168768',
     socialLinks: [
       { label: '[待我替换] LinkedIn', href: '#' },
       { label: '[待我替换] GitHub', href: '#' },
